@@ -2,7 +2,7 @@
 exports.up = function(knex, Promise) {
   return knex.schema.createTable('status', function (table) {
       table.increments('id');
-      table.string('content');
+      table.string('name');
       table.datetime('delete_at');
   })
 };

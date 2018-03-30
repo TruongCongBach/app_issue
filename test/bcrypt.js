@@ -1,7 +1,7 @@
 const bcrypt = require('bcrypt');
 
 const saltRounds = 10;
-const myPlaintextPassword = 'admin';
+const myPlaintextPassword = 'manh';
 const passInput = 'admin';
 
 bcrypt.genSalt(saltRounds, function(err, salt) {

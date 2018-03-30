@@ -4,7 +4,7 @@ exports.up = function(knex, Promise) {
       table.increments('id');
       table.string('user');
       table.string('password');
-      table.string('sole');
+      table.string('role');
       table.string('profile_id');
       table.datetime('delete_at');
   })
