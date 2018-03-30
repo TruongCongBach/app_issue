@@ -1,6 +1,6 @@
 
 exports.up = function(knex, Promise) {
-  return knex.schema.createTable('issue-topics',function (table) {
+  return knex.schema.createTable('topics',function (table) {
       table.increments('id');
       table.string('content');
       table.datetime('delete_at');
@@ -8,5 +8,5 @@ exports.up = function(knex, Promise) {
 };
 
 exports.down = function(knex, Promise) {
-  return knex.schema.dropTable('issue-topics');
+  return knex.schema.dropTable('topics');
 };
