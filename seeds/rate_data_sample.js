@@ -5,10 +5,10 @@ exports.seed = function(knex, Promise) {
     .then(function () {
       // Inserts seed entries
       return knex('rates').insert([
-          {vote:5, content:'issue rat tot nhung rat tiec', user_id:3, delete_at:null},
-          {vote:4, content:'van de nay rat nhay cam', user_id:3, delete_at:null},
-          {vote:1, content:'xinh vkl! anh se giup :))', user_id:2, delete_at:null},
-          {vote:3, content:'can xem set lai', user_id:3, delete_at:null}
+          {id:1, point_vote:5, comment:'issue rat tot nhung rat tiec', user_id:3, delete_at:null},
+          {id:2, point_vote:4, comment:'van de nay rat nhay cam', user_id:3, delete_at:null},
+          {id:3, point_vote:1, comment:'xinh vkl! anh se giup :))', user_id:2, delete_at:null},
+          {id:4, point_vote:3, comment:'can xem set lai', user_id:3, delete_at:null}
       ]);
     });
 };

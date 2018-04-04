@@ -1,18 +1,38 @@
+const User = require('../src/user');
+const Issue = require('../src/issue/issue');
+
 class New{
     /**
      *
-     * @param issueId
+     * @param {Issue} issue
      */
-    setIssueId(issueId) {
-        this.issueId = issueId
+    setIssueId(issue) {
+        this.issue = issue
     }
 
     /**
      *
-     * @return {number} issueId
+     * @return {Issue} issue
      */
     getIssueId() {
-        return this.issueId;
+        return this.issue;
     }
+
+    /**
+     *
+     * @param  {User} user
+     */
+    setUer(user) {
+        this.user = user;
+    }
+
+    /**
+     *
+     * @return {User} user
+     */
+    getUser() {
+        return this.user;
+    }
+
 }
 module.exports = New;

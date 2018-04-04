@@ -1,141 +1,91 @@
-<<<<<<< HEAD
-const Profile = require('../src/profile');
 class User {
 
-    constructor(user, password) {
-        this.user = user;
+    /**
+     *
+     * @param {string} userName
+     * @param {string} password
+     */
+    constructor(userName, password) {
+        this.userName = userName;
         this.password = password;
     }
 
-
     /**
      *
-     * @param {string} user
+     * @return {int} id
      */
-    setUser(user) {
-        this.user = user;
-=======
-class User {
-
-    /**
-     *
-     * @param user
-     */
-    constructor(user) {
-        this.user = user;
-    }
-
-    /**
-     *
-     * @return {number} id
-     */
-    getId() {
+    getId(){
         return this.id;
->>>>>>> dev
     }
 
     /**
      *
-<<<<<<< HEAD
+     * @param {string} userName
+     */
+    setUserName(userName) {
+        this.userName = userName;
+    }
+
+    /**
+     *
      * @param {string} password
      */
     setPassword(password) {
         this.password = password;
     }
 
-
-=======
-     * @param id
-     */
-    setId(id) {
-        this.id = id;
-    }
-
->>>>>>> dev
     /**
      *
      * @return {string} user
      */
-    getUser() {
-        return this.user;
+    getUserName() {
+        return this.userName;
     }
 
     /**
      *
-<<<<<<< HEAD
      * @return {string} password
      */
     getPassword() {
         return this.password;
-=======
-     * @param user
-     */
-    setUser(user) {
-        this.user = user;
->>>>>>> dev
     }
 
     /**
      *
-<<<<<<< HEAD
      * @param str = 'admin' || str = 'member'
      */
     setRole(str) {
         this.role = str;
     }
 
-    getRole() {
-        return this.role;
-=======
-     * @return {string} pass
-     */
-    getPass() {
-        return this.pass;
-    }
-
     /**
      *
-     * @param pass
-     */
-    setPass(pass) {
-        this.pass = pass;
->>>>>>> dev
-    }
-
-    /**
-     *
-<<<<<<< HEAD
-     * @param {Profile} profile
-     */
-    setProfile(profile) {
-        this.profile = profile;
-=======
      * @return {string} role
      */
     getRole() {
         return this.role;
->>>>>>> dev
     }
 
     /**
      *
-<<<<<<< HEAD
-     * @return {Profile}
+     * @param {int} id
      */
-    getProfile() {
-        return this.profile;
+    setId(id){
+        this.id = id;
     }
 
+    /**
+     *
+     * @param array
+     * @return {User}
+     */
+    setUser(array) {
+        this.setUserName(array.user);
+        this.setId(array.id);
+        this.setPassword(array.password);
+        this.setRole(array.role);
+        return User;
+    }
 }
 
 module.exports = User;
-=======
-     * @param role
-     */
-    setRole(role) {
-        this.role = role;
-    }
-
-}
-module.exports = User;
->>>>>>> dev
