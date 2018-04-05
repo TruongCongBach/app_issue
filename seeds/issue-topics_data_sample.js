@@ -5,11 +5,11 @@ exports.seed = function(knex, Promise) {
     .then(function () {
       // Inserts seed entries
       return knex('topics').insert([
-          {content:'Giang Vien', delete_at:null},
-          {content:'Moi truong', delete_at:null},
-          {content:'Hoc tap', delete_at:null},
-          {content:'Vat tu', delete_at:null},
-          {content:'????', delete_at:null}
+          {id:1, name:'Giang Vien', delete_at:null},
+          {id:2, name:'Moi truong', delete_at:null},
+          {id:3, name:'Hoc tap', delete_at:null},
+          {id:4, name:'Vat tu', delete_at:null},
+          {id:5, name:'Khac', delete_at:null}
       ]);
     });
 };
