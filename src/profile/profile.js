@@ -1,12 +1,19 @@
-const User = require('../src/user');
 class Profile {
 
     /**
-     * 
-     * @param {User} user
+     *
+     * @param id
      */
-    constructor(user) {
-        this.user = user;
+    setUserId(id) {
+        this.user_id = id;
+    }
+
+    /**
+     *
+     * @return {*}
+     */
+    getUserId() {
+        return this.user_id;
     }
 
     /**
@@ -27,7 +34,7 @@ class Profile {
     
     /**
      *
-     * @param {date} date
+     * @param {*} date
      */
     setDateOfBirth(date) {
         this.date = date;
@@ -104,6 +111,24 @@ class Profile {
      */
     getAvatar() {
         return this.link;
+    }
+
+    /**
+     *
+     * @param array
+     * @return {Profile} profile
+     */
+    setProfile(array) {
+        let profile = new Profile();
+        profile.setUserId(array[0].user_id);
+        profile.setFullName(array[0].fullName);
+        profile.setAddress(array[0].address);
+        profile.setPhone(array[0].phone);
+        profile.setEmail(array[0].email);
+        profile.setDateOfBirth(array[0].dateOfBirth);
+        profile.setAvatar(array[0].avatar);
+        return profile;
+
     }
 }
 

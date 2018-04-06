@@ -1,13 +1,12 @@
-const User = require('../src/user');
+const User = require('./user/user');
 
 class Rate {
 
     /**
      *
-     *
      * @param {User} user
      */
-    constructor(user) {
+    setUser(user) {
         this.user = user;
     }
 

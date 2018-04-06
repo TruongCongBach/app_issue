@@ -1,5 +1,5 @@
 const Issue = require('../issue/issue');
-const User = require('../user');
+const User = require('../user/user');
 
 class FeedBack {
 

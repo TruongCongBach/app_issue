@@ -1,6 +1,5 @@
 const Credential = require('./credential');
 const Profile = require('./profile');
-const ValidatorRegistrationForm = require('../../validator/validator');
 const Connection = require('../../../database/connection');
 
 class RegistrationForm {
@@ -182,15 +181,7 @@ class RegistrationForm {
         this.profile.setPhone(reqData.phone);
         this.profile.setAddress(reqData.address);
         this.profile.setAvatar(reqData.avatar);
-
-
-    }
-
-    isInvalid() {
-
-    }
-
-    getInvalids() {
+        return RegistrationForm;
 
     }
 }

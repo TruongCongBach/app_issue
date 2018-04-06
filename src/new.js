@@ -1,5 +1,5 @@
-const User = require('../src/user');
-const Issue = require('../src/issue/issue');
+const User = require('./user/user');
+const Issue = require('./issue/issue');
 
 class New{
     /**

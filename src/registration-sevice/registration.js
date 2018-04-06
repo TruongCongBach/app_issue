@@ -17,17 +17,18 @@ class Registration {
      */
     register(registrationForm) {
         return Connection('users').insert({
-            user     : registrationForm.getUser(),
-            password : encode(registrationForm.getPassword())
+            username     : registrationForm.getUser(),
+            password     : encode(registrationForm.getPassword()),
+            role :'member'
         }).then((user) => {
             return Connection('profiles').insert({
-                user_id : user[0],
-                name    : registrationForm.getName(),
-                address : registrationForm.getAddress(),
-                phone   : registrationForm.getPhone(),
-                email   : registrationForm.getEmail(),
-                birth   : registrationForm.getBirth(),
-                avatar  : registrationForm.getAvatar()
+                user_id       : user[0],
+                fullName      : registrationForm.getName(),
+                address       : registrationForm.getAddress(),
+                phone         : registrationForm.getPhone(),
+                email         : registrationForm.getEmail(),
+                dateOfBirth   : registrationForm.getBirth(),
+                avatar        : registrationForm.getAvatar()
             })
         });
     }

@@ -1,11 +1,11 @@
 //test feedback
 const Feedback = require('../src/feed-back/feed-back');
 const Issue    = require('../src/issue/issue');
-const Topic    = require('../src/topic');
-const User     = require('../src/user');
+const Topic    = require('../src/topic/topic');
+const User     = require('../src/user/user');
 const FeedBack = require('../src/feed-back/feed-back');
 const MakeFormIsssueReq = require('../src/issue/factory-rq');
-const BankIssue = require('../src/issue/bank-issue');
+const BankIssue = require('../src/issue/repo-issue');
 const Connection = require('../database/connection');
 
 let myAccount = new User('bach','1');

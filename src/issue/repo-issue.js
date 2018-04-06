@@ -1,7 +1,7 @@
 const connection = require('../../database/connection');
 const Issue      = require('./issue');
 
-class BankIssue {
+class IssueRepository {
 
     /**
      *
@@ -18,11 +18,11 @@ class BankIssue {
      */
     addIssue(issue) {
         return connection('issues').insert({
-            topic_id  : issue.topic.getId(),
             content   : issue.getContent(),
-            user_id   : issue.user.getId(),
+            topic_id  : issue.topic.getId(),
+            user_id   : issue.user.getUserId(),
             date_time : new Date().toLocaleString(),
-            status_id : issue.status.getId(),
+            status    : 'No process'
         })
 
     }
@@ -44,17 +44,16 @@ class BankIssue {
 
     /**
      *
-     * @param {Issue} issue
+     * @param {int} id
      */
-    deleteIssue(issue) {
+    delete(id) {
         return connection('issues').update({
-            delete_at : new Date().toLocaleString()
+            archived_at : new Date().toLocaleString()
         }).where({
-            user_id : issue.user.getId(),
-            id      : issue.getId(),
+            id      : id,
         })
     }
 
 }
 
-module.exports = BankIssue;
+module.exports = IssueRepository;

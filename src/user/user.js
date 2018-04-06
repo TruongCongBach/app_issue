@@ -2,11 +2,11 @@ class User {
 
     /**
      *
-     * @param {string} userName
+     * @param {string} username
      * @param {string} password
      */
-    constructor(userName, password) {
-        this.userName = userName;
+    constructor(username, password) {
+        this.userName = username;
         this.password = password;
     }
 
@@ -80,7 +80,7 @@ class User {
      * @return {User}
      */
     setUser(array) {
-        this.setUserName(array.user);
+        this.setUserName(array.username);
         this.setId(array.id);
         this.setPassword(array.password);
         this.setRole(array.role);

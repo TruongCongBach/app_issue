@@ -1,16 +1,23 @@
-const Topic = require('../topic');
-const User  = require('../user');
-const Rate  = require('')// rate
+const Topic = require('../topic/topic');
+const User  = require('../user/user');
+const Rate  = require('../rate');
 
 class Issue {
 
     /**
-     * @param {Topic} topic
      * @param {string} content
      */
-    constructor(topic, content) {
-        this.topic   = topic;
+    constructor(content) {
         this.content = content;
+    }
+
+
+    /**
+     *
+     * @param {Topic} topic
+     */
+    setTopic(topic) {
+        this.topic = topic;
     }
 
     /**
@@ -55,7 +62,7 @@ class Issue {
 
     /**
      *
-     * @param {User} user
+     * @param {object} user
      */
     setUser(user) {
         this.user = user;
@@ -63,7 +70,7 @@ class Issue {
 
     /**
      *
-     * @return {User} user
+     * @return {object} user
      */
     getUser() {
         return this.user;
@@ -102,6 +109,21 @@ class Issue {
         this.dateTime = dateTime;
     }
 
+    /**
+     *
+     * @param  {Rate} rate
+     */
+    setRate(rate) {
+        this.rate = rate;
+    }
+
+    /**
+     *
+     * @return {Rate} rate
+     */
+    getRate() {
+        return this.rate;
+    }
 }
 
 module.exports = Issue;
