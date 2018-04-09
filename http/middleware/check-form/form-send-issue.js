@@ -1,8 +1,6 @@
 const validator   = require('validator');
-const makeFormReq = require('../../../src/issue/factory-rq');
-const StatusIssue = require('../validator/status-Issue');
+const makeFormReq = require('../../../src/issue/factory-issue-rq');
 
-let checkStatus = new StatusIssue(this.connection);
 
 module.exports = function checkFormIssue(req, res, next) {
         //check content issue khong dc de trong
@@ -14,14 +12,13 @@ module.exports = function checkFormIssue(req, res, next) {
         }
 
         //check status cua issue
-        checkStatus.checkStatusIssue(req.body.user_id).then((boolean) => {
-            if(boolean) {
-                new makeFormReq().makeFormReq(req.body).then( (issue) => {
-                    req.issue = issue;
-                    next();
-                });
+        let tester = req.app.get('middle.tester');
+        tester.statusIssue(req.body.user_id).then((arrayIssue) => {
+            if(arrayIssue.length === 0) {
+                new makeFormReq().makeFormReq(req, res, next);
             } else {
-                res.send('user khong duoc gui issue');
+                res.send('user not send Issue');
+
             }
         })
     };

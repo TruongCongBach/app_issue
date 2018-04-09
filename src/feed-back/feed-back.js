@@ -37,6 +37,21 @@ class FeedBack {
         this.user = user;
     }
 
+    /**
+     *
+     * @param date
+     */
+    setDate(date) {
+        this.date = date;
+    }
+
+    /**
+     *
+     * @return {string} date
+     */
+    getDate() {
+        return this.date;
+    }
 
 }
 

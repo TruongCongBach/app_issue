@@ -1,21 +1,24 @@
 const express                = require('express');
 const router                 = express.Router();
 const superCheck             = require('../http/middleware/index');
-const IssueController        = require('../http/controller/issue/issue-conntroler');
-const RegistrationControler  = require('../http/controller/registration/registrationController');
+const Contronller             = require('../http/controller/index');
+let issue = new Contronller.issueControler();
+let registration = new Contronller.registration();
+let feedback = new Contronller.feedbackContronler();
 
-
-let issueController = new IssueController();
-let registrationControler = new RegistrationControler();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index.html', { title: 'Express' });
 });
 
-router.post('/register', superCheck.fromRegistration, registrationControler.registration);
-router.post('/sendIssue', superCheck.fromSendIssue, issueController.createIssue);
-router.delete('/delIssue/:id', issueController.delIssue);
+//member
+router.post('/register', superCheck.fromRegistration, registration.registration);
+router.post('/sendIssue', superCheck.fromSendIssue, issue.createIssue);
+router.delete('/delIssue/:id', issue.delIssue);
+router.get('/myIssue/:id', superCheck.SearchCondition, issue.showMyIssue);
+router.get('/feedbackIssue/:id', feedback.showFeedback);
+
 
 
 module.exports = router;

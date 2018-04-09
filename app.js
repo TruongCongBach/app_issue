@@ -1,18 +1,22 @@
-const express = require('express');
-const path = require('path');
-const cookieParser = require('cookie-parser');
-const logger = require('morgan');
-const nunjucks = require('nunjucks');
+const express           = require('express');
+const path              = require('path');
+const cookieParser      = require('cookie-parser');
+const logger            = require('morgan');
+const nunjucks          = require('nunjucks');
 
-let indexRouter = require('./routes/index');
-let usersRouter = require('./routes/users');
-const RegistrationForm = require('./src/registration-sevice/registration-form/registration-form');
-const Credential = require('./src/registration-sevice/registration-form/credential');
-const Profile = require('./src/registration-sevice/registration-form/profile');
-const Registration = require('./src/registration-sevice/registration');
-const connection = require('./database/connection');
-const IssueRepo = require('./src/issue/repo-issue');
-const app = express();
+let indexRouter         = require('./routes/index');
+let usersRouter         = require('./routes/users');
+const RegistrationForm  = require('./src/registration-sevice/registration-form/registration-form');
+const Credential        = require('./src/registration-sevice/registration-form/credential');
+const Profile           = require('./src/registration-sevice/registration-form/profile');
+const Registration      = require('./src/registration-sevice/registration');
+const connection        = require('./database/connection');
+const IssueRepo         = require('./src/issue/repo-issue');
+const Searcher          = require('./src/search-services/searcher');
+const Factory           = require('./src/issue/factory-issue-db');
+const Tester            = require('./http/middleware/tester/tester');
+const bcrypt            = require('bcrypt');
+const app               = express();
 
 nunjucks.configure('views', {
     autoescape: true,
@@ -28,10 +32,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
-
+const ProviderFeedback = require('./src/search-services/feedback-by-issue_id');
+app.set('middle.tester', new Tester(connection));
 app.set('issues.repo', new IssueRepo(connection));
 app.set('registrationForm', new RegistrationForm(new Credential(), new Profile(), connection));
-app.set('registration', new Registration(connection));
-
+app.set('registration', new Registration(connection, bcrypt));
+app.set('issue.searcher', new Searcher(connection, new Factory()));
+app.set('provider.feedback', new ProviderFeedback(connection));
 
 module.exports = app;

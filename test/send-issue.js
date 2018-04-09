@@ -1,4 +1,4 @@
-const MakeFormIsssueReq = require('../src/issue/factory-rq');
+const MakeFormIsssueReq = require('../src/issue/factory-issue-rq');
 const RepoIssue         = require('../src/issue/repo-issue');
 const connection        = require('../database/connection');
 const Vaildator         = require('../http/middleware/check-form/form-send-issue');

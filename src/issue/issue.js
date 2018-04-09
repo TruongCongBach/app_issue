@@ -111,18 +111,18 @@ class Issue {
 
     /**
      *
-     * @param  {Rate} rate
+     * @param  {int} point_rate
      */
-    setRate(rate) {
-        this.rate = rate;
+    setRate(point_rate) {
+        this.point_rate = point_rate;
     }
 
     /**
      *
-     * @return {Rate} rate
+     * @return {int} point_rate
      */
     getRate() {
-        return this.rate;
+        return this.point_rate;
     }
 }
 

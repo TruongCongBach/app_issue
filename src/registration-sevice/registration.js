@@ -1,34 +1,33 @@
-const Connection = require('../../database/connection');
-const encode = require('../bcryt/encode');
-
 class Registration {
 
     /**
      *
+     * @param {object} bcrypt
      * @param {Connection} connection
      */
-    constructor(connection) {
+    constructor(connection, bcrypt) {
         this.connection = connection;
+        this.bcrypt     = bcrypt;
     }
-
     /**
      *
      * @param {Object} registrationForm
      */
     register(registrationForm) {
-        return Connection('users').insert({
-            username     : registrationForm.getUser(),
-            password     : encode(registrationForm.getPassword()),
-            role :'member'
+        let salt = this.bcrypt.genSaltSync(10);
+        return this.connection('users').insert({
+            username : registrationForm.getCredential().getUser(),
+            password : this.bcrypt.hashSync(registrationForm.getCredential().getPassword(), salt),
+            role     :'member'
         }).then((user) => {
-            return Connection('profiles').insert({
+            return this.connection('profiles').insert({
                 user_id       : user[0],
-                fullName      : registrationForm.getName(),
-                address       : registrationForm.getAddress(),
-                phone         : registrationForm.getPhone(),
-                email         : registrationForm.getEmail(),
-                dateOfBirth   : registrationForm.getBirth(),
-                avatar        : registrationForm.getAvatar()
+                fullName      : registrationForm.getProfile().getName(),
+                address       : registrationForm.getProfile().getAddress(),
+                phone         : registrationForm.getProfile().getPhone(),
+                email         : registrationForm.getProfile().getEmail(),
+                dateOfBirth   : registrationForm.getProfile().getBirth(),
+                avatar        : registrationForm.getProfile().getAvatar()
             })
         });
     }

@@ -4,7 +4,7 @@ const Issue    = require('../src/issue/issue');
 const Topic    = require('../src/topic/topic');
 const User     = require('../src/user/user');
 const FeedBack = require('../src/feed-back/feed-back');
-const MakeFormIsssueReq = require('../src/issue/factory-rq');
+const MakeFormIsssueReq = require('../src/issue/factory-issue-rq');
 const BankIssue = require('../src/issue/repo-issue');
 const Connection = require('../database/connection');
 
@@ -22,4 +22,8 @@ let myIssue = {
 
 };
 
+const  showfeedbackByissue = require('../src/search-services/feedback-by-issue_id');
+showfeedbackByissue(1).then((ss)=>{
+    console.log(ss);
+});
 

@@ -1,7 +1,7 @@
 const User = require('./user/user');
 const Issue = require('./issue/issue');
 
-class New{
+class News{
     /**
      *
      * @param {Issue} issue
@@ -35,4 +35,4 @@ class New{
     }
 
 }
-module.exports = New;
+module.exports = News;

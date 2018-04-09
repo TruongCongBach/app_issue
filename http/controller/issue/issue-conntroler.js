@@ -1,4 +1,5 @@
 
+
 class IssueController {
 
         createIssue(request, response, next) {
@@ -14,6 +15,16 @@ class IssueController {
                 response.send('thanh cong');
             })
         }
+
+        showMyIssue(request, response, next) {
+            let searcher = request.app.get('issue.searcher');
+            searcher.searchIssueTopic(request.condition).then((arrayIssueUser)=>{
+                response.send(arrayIssueUser);
+            });
+        }
+
+
+
 }
 
 module.exports = IssueController;

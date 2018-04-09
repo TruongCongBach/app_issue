@@ -29,21 +29,6 @@ class IssueRepository {
 
     /**
      *
-     * @param {Issue} issue
-     */
-    editIssue(issue) {
-        return connection('issues').update({
-            topic_id : issue.topic.getId(),
-            content  : issue.getContent(),
-
-        }).where({
-            user_id : issue.user.getId(),
-            id      : issue.id,
-        })
-    }
-
-    /**
-     *
      * @param {int} id
      */
     delete(id) {
@@ -53,6 +38,9 @@ class IssueRepository {
             id      : id,
         })
     }
+
+
+
 
 }
 
