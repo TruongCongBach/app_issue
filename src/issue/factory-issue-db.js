@@ -10,7 +10,7 @@ class FactoryIssueDB {
      * @param {object} issue
      * @return {Issue}
      */
-    makeFormDB(issue) {
+    makeFormIssueDB(issue) {
         let topic = new Topic(issue.name);
         topic.setId(issue.topic_id);
         let myIssue = new Issue(issue.content);

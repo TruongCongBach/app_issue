@@ -1,5 +1,3 @@
-
-
 class IssueController {
 
         createIssue(request, response, next) {
@@ -18,8 +16,15 @@ class IssueController {
 
         showMyIssue(request, response, next) {
             let searcher = request.app.get('issue.searcher');
-            searcher.searchIssueTopic(request.condition).then((arrayIssueUser)=>{
+            searcher.searchCondition(request.condition).then((arrayIssueUser)=>{
                 response.send(arrayIssueUser);
+            });
+        }
+
+        showIssueInTopic(request, response, next) {
+            let searcher = request.app.get('issue.searcher');
+            searcher.searchCondition(request.condition).then((arrayIssueTopic)=>{
+                response.send(arrayIssueTopic);
             });
         }
 

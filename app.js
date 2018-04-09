@@ -16,6 +16,8 @@ const Searcher          = require('./src/search-services/searcher');
 const Factory           = require('./src/issue/factory-issue-db');
 const Tester            = require('./http/middleware/tester/tester');
 const bcrypt            = require('bcrypt');
+const ListTopic         = require('./src/topic/topic-provider');
+const FactoryTopic      = require('./src/topic/factory-topic-db');
 const app               = express();
 
 nunjucks.configure('views', {
@@ -39,5 +41,5 @@ app.set('registrationForm', new RegistrationForm(new Credential(), new Profile()
 app.set('registration', new Registration(connection, bcrypt));
 app.set('issue.searcher', new Searcher(connection, new Factory()));
 app.set('provider.feedback', new ProviderFeedback(connection));
-
+app.set('listTopic', new ListTopic(connection, new FactoryTopic()));
 module.exports = app;

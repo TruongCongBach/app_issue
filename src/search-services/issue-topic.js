@@ -1,11 +1,11 @@
-class IssueUser {
+class IssueTopic {
 
     /**
      *
-     * @param {int} userId
+     * @param {int} topicId
      */
-    constructor (userId){
-        this.userId = userId;
+    constructor (topicId){
+        this.topicId = topicId;
     }
 
     /**
@@ -14,12 +14,12 @@ class IssueUser {
      * @return {Issue[]}
      */
     describe(sqlQuery) {
-        let userId = this.userId;
+        let topicId = this.topicId;
         return sqlQuery
             .where(function () {
-                this.where('user_id', 'like', '%' + userId + '%')
+                this.where('topic_id', 'like', '%' + topicId + '%')
             }).where({'issues.archived_at': null});
     }
 }
 
-module.exports = IssueUser;
+module.exports = IssueTopic;
