@@ -15,11 +15,11 @@ class Searcher {
      * @param condition
      * @return Issue[]
      */
-    searchIssueTopic(condition) {
-        let sqlQuery = this.connection.from('issues')
+    searchCondition(condition) {
+        let sqlQuery = this.connection('issues')
             .innerJoin('topics', 'issues.topic_id', 'topics.id');
         condition.describe(sqlQuery);
-        return sqlQuery.then(issue => issue.map(element => this.factory.makeFormDB(element)));
+        return sqlQuery.then(issue => issue.map(element => this.factory.makeFormIssueDB(element)));
 
     }
 

@@ -1,23 +1,30 @@
 const Topic = require('./topic');
-const Connection = require('../../database/connection');
 
 class UserProvider {
     /**
      *
      * @param {Connection} connection
+     * @param {object} factory
      */
-    constructor(connection) {
+    constructor(connection, factory) {
         this.connection = connection;
+        this.factory = factory;
     }
 
     providerId(id) {
-        return Connection.select().from('topics').where({
+        return this.connection.select().from('topics').where({
             id : id,
         }).then((arrayTopic) => {
             let topic = new Topic();
             topic.setId(arrayTopic[0].id);
             topic.setName(arrayTopic[0].name);
             return topic;
+        })
+    }
+
+    providerAll() {
+        return this.connection.select().from('topics').then((arrayTopic) => {
+           return arrayTopic.map(element => this.factory.makeFromTopicDB(element))
         })
     }
 }
