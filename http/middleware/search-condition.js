@@ -9,7 +9,7 @@ module.exports = function (req, res, next) {
         if(req.path.toString().startsWith('/myIssue/')){
             return new SearchIssueUser(req.params.id);
         }
-        if(req.path.toString().startsWith('/listIssueInTopic/')){
+        if(req.path.toString().startsWith('/listNewsIssueInTopic/')){
             return new SearchIssueTopic(req.params.topicId);
         }
     }

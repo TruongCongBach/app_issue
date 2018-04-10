@@ -6,6 +6,7 @@ let issue         = new Controller.issueControler();
 let registration  = new Controller.registration();
 let feedback      = new Controller.feedbackContronler();
 let topic         = new Controller.TopicContronler();
+let comment       = new Controller.CommentContronler();
 
 
 /* GET home page. */
@@ -21,7 +22,7 @@ router.get('/myIssue/:id', superCheck.SearchCondition, issue.showMyIssue);
 router.get('/feedbackIssue/:id', feedback.showFeedback); //issue_id
 router.get('/listTopic', topic.showTopic);
 router.get('/listNewsIssueInTopic/:topicId', superCheck.SearchCondition, issue.showIssueInTopic);
-
+router.get('/listComment/:issue_id',comment.showCommentByIssue);
 
 
 

@@ -4,7 +4,7 @@ class Profile {
      *
      * @param id
      */
-    setUserId(id) {
+setUserId(id) {
         this.user_id = id;
     }
 
@@ -98,19 +98,19 @@ class Profile {
 
     /**
      * 
-     * @param {string} link
+     * @param {string} avatar
      */
-    setAvatar(link) {
-        this.link = link;
+    setAvatar(avatar) {
+        this.avatar = avatar;
     }
 
 
     /**
      * 
-     * @return {string} link
+     * @return {string} avatar
      */
     getAvatar() {
-        return this.link;
+        return this.avatar;
     }
 
     /**
