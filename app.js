@@ -45,7 +45,7 @@ app.set('registrationForm', new RegistrationForm(new Credential(), new Profile()
 app.set('registration', new Registration(connection, bcrypt));
 app.set('issue.searcher', new Searcher(connection, new Factory()));
 app.set('provider.feedback', new ProviderFeedback(connection));
-app.set('comment.repo', new CommentRepo(connection, new Comment()));
+app.set('comment.repo', new CommentRepo(connection));
 app.set('listTopic', new ListTopic(connection, new FactoryTopic()));
 app.set('listComment', new ProviderComment(connection, new FactoryComment()));
 module.exports = app;

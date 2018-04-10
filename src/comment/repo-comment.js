@@ -3,11 +3,9 @@ class CommentRepository {
     /**
      *
      * @param {connection} connection
-     * @param {Comment} comment
      */
-    constructor(connection, comment) {
+    constructor(connection) {
         this.connection = connection;
-        this.comment    = comment;
     }
 
     /**
