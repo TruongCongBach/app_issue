@@ -9,12 +9,12 @@ class FeedbackController {
     }
 
     createFeedback(req, res, next) {
-        let promiseFeedback = req.app.get('repo.feedback');
-        let promiseIssue = req.app.get('issues.repo');
-        promiseFeedback.add(req.feedback);
-        promiseIssue.updateStatus(req.issue);
-        Promise.all([promiseFeedback, promiseIssue]).then(() => {
-            res.status(200).send({message: 'Success!'})
+        let promiseFeedback = req.app.get('repo.feedback').add(req.feedback);
+        let promiseIssue = req.app.get('issues.repo').updateStatus(req.feedback.issue);
+        Promise.all([promiseFeedback, promiseIssue]).then(()=>{
+            res.send('success!');
+        }).catch(()=>{
+            res.send('send false!');
         })
 
     }

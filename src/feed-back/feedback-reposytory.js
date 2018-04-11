@@ -15,7 +15,7 @@ class FeedbackRepository {
      */
     add(feedback) {
         return this.connection('feedbacks').insert({
-            issue_id  : feedback.getIssue().getId(),
+            issue_id  : feedback.issue.getId(),
             user_id   : feedback.user.getId(), //admin
             content   : feedback.getContent(),
             date_time : new Date(),

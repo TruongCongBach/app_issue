@@ -9,13 +9,28 @@ class RepoNews {
     }
 
     /**
-     *
-     * @param {Posts} posts
+     * update colurm news values date
+     * @params {int} issueId
+     * @return {*}
      */
-    addPosts(posts){
-        return this.connection('news').insert({
-            issue_id: posts.getIssue(),
-            user_id: posts.getUser()
+    addPosts(issueId){
+        return this.connection('issues').update({
+            news : new Date().toLocaleString()
+        }).where({
+            id : issueId
+        })
+    }
+
+    /**
+     *
+     * @param issueId
+     * @return {*}
+     */
+    delPosts(issueId){
+        return this.connection('issues').update({
+            archived_at: new Date().toLocaleString()
+        }).where({
+            id : issueId
         })
     }
 

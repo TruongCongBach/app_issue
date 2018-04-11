@@ -1,17 +1,8 @@
 const User = require('./user');
-const Connection = require('../../database/connection');
+const connection = require('../../database/connection');
 
-class UserProvider {
-    /**
-     *
-     * @param {Connection} connection
-     */
-    constructor(connection) {
-        this.connection = connection;
-    }
-
-    providerId(id) {
-        return Connection.select().from('users').where({
+module.exports = function providerId(id) {
+        return connection.select().from('users').where({
             id : id,
         }).then((arrayUser) => {
             let user = new User(arrayUser[0].username, arrayUser[0].password);
@@ -19,7 +10,7 @@ class UserProvider {
                 user.setRole(arrayUser[0].role);
             return user;
         })
-    }
-}
+    };
 
-module.exports = UserProvider;
+
+

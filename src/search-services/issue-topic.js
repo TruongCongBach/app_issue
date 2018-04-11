@@ -18,7 +18,9 @@ class IssueTopic {
         return sqlQuery
             .where(function () {
                 this.where('topic_id', 'like', '%' + topicId + '%')
-            }).where({'issues.archived_at': null});
+            }).where({
+                'issues.archived_at': null,
+            }).whereNotNull('issues.news');
     }
 }
 
