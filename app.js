@@ -21,6 +21,7 @@ const FactoryTopic      = require('./src/topic/factory-topic-db');
 const FactoryComment    = require('./src/commentator/make-from-db');
 const ProviderComment   = require('./src/search-services/provider-comment');
 const RepoNews          = require('./src/news/repo-news');
+const FeedbackRepo      = require('./src/feed-back/feedback-reposytory');//MC
 
 const app               = express();
 
@@ -48,5 +49,6 @@ app.set('provider.feedback', new ProviderFeedback(connection));
 app.set('listTopic', new ListTopic(connection, new FactoryTopic()));
 app.set('listComment', new ProviderComment(connection, new FactoryComment()));
 app.set('news.repo', new RepoNews(connection));
+app.set('repo.feedback', new FeedbackRepo);//MC
 
 module.exports = app;

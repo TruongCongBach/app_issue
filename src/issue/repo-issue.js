@@ -38,11 +38,16 @@ class IssueRepository {
         })
     }
 
-    update(id) {
+    /**
+     *
+     * @param {object} issue
+     * @return {Promise<void>}
+     */
+    updateStatus(issue) {
         return this.connection('issues').update({
-            status: 'processed'
+            status: 'processed',
         }).where({
-            id : id
+            id : issue.getId()
         })
     }
 

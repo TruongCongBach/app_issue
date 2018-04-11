@@ -12,11 +12,14 @@ let feedback = new Feedback(issue, "van de cua ban dang duoc khac phuc");
 
 issue.setId(10);
 feedback.setUser(user);
-// new RepoFeedback(connection).add(feedback).then(()=> {
-//     console.log('success');
+console.log(feedback);
+//
+// let addFeedback = new RepoFeedback(connection).add(feedback);
+//
+// let updatIssue = new RepoIssue(connection).updateStatus(feedback.issue);
+//
+// Promise.all([addFeedback, updatIssue]).then(()=>{
+//     console.log('Success!');
 // });
 
-console.log(feedback.user.getId());
 
-
-connection.select().from('issues').then(console.log);
