@@ -5,7 +5,7 @@ const connection = require('../database/connection');
 //     console.log(issue);
 // });
 
-const Searcher = require('../src/search-services/searcher');
+const Searcher = require('../src/issue/search-services/searcher');
 const Factory = require('../src/issue/factory-issue-db');
 let factory = new Factory();
 

@@ -1,4 +1,4 @@
-const Feedback = require('../feed-back/feed-back');
+const Feedback = require('../../feed-back/feed-back');
 
 class ProviderFeedback {
 

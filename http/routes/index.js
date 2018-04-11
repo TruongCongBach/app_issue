@@ -1,7 +1,7 @@
 const express                = require('express');
 const router                 = express.Router();
-const superCheck             = require('../http/middleware/index');
-const Controller             = require('../http/controller/index');
+const superCheck             = require('../middleware/index');
+const Controller             = require('../controller/index');
 
 let checkComment  = [superCheck.checkComment, superCheck.commentRequest];
 let issue         = new Controller.issueControler();

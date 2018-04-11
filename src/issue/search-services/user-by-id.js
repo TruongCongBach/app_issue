@@ -1,4 +1,4 @@
-const connection = require('../../database/connection');
+const connection = require('../../../database/connection');
 
 module.exports = function contentTopic(userId) {
     return connection.select().from('users').where({

@@ -1,6 +1,6 @@
-const SearchIssueUser = require('../../src/search-services/search-issue-user');
-const SearchIssueTopic = require('../../src/search-services/issue-topic');
-const SearchIssueStatus = require('../../src/search-services/status-issues');
+const SearchIssueUser = require('../../src/issue/search-services/search-issue-user');
+const SearchIssueTopic = require('../../src/issue/search-services/issue-topic');
+const SearchIssueStatus = require('../../src/issue/search-services/status-issues');
 
 module.exports = function (req, res, next) {
     req.condition = makeCondition(req);

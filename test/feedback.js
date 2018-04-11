@@ -22,7 +22,7 @@ let myIssue = {
 
 };
 
-const  showfeedbackByissue = require('../src/search-services/feedback-by-issue_id');
+const  showfeedbackByissue = require('../src/issue/search-services/feedback-by-issue_id');
 showfeedbackByissue(1).then((ss)=>{
     console.log(ss);
 });
