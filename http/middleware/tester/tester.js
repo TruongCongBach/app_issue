@@ -9,13 +9,13 @@ class Tester {
     }
 
     User(username) {
-        return this.connection.select().from('users').where({
+        return this.connection('users').where({
             userName : username
         });
     }
 
     statusIssue(userId) {
-        return this.connection.select().from('issues').where({
+        return this.connection('issues').where({
             user_id     : userId,
             status      : 'No process',
             archived_at : null

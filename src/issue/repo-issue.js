@@ -1,4 +1,3 @@
-const connection = require('../../database/connection');
 const Issue      = require('./issue');
 
 class IssueRepository {
@@ -17,7 +16,7 @@ class IssueRepository {
      * @return {Promise <void>}
      */
     addIssue(issue) {
-        return connection('issues').insert({
+        return this.connection('issues').insert({
             content   : issue.getContent(),
             topic_id  : issue.topic.getId(),
             user_id   : issue.user.getUserId(),
@@ -32,10 +31,18 @@ class IssueRepository {
      * @param {int} id
      */
     delete(id) {
-        return connection('issues').update({
+        return this.connection('issues').update({
             archived_at : new Date().toLocaleString()
         }).where({
-            id      : id,
+            id : id
+        })
+    }
+
+    update(id) {
+        return this.connection('issues').update({
+            status: 'processed'
+        }).where({
+            id : id
         })
     }
 

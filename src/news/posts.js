@@ -1,28 +1,26 @@
-const User = require('./user/user');
-const Issue = require('./issue/issue');
+class Posts {
 
-class News{
     /**
      *
      * @param {Issue} issue
      */
-    setIssueId(issue) {
-        this.issue = issue
+    setIssue(issue) {
+        this.issue = issue;
     }
 
     /**
      *
-     * @return {Issue} issue
+     * @return {Issue}
      */
-    getIssueId() {
+    getIssue() {
         return this.issue;
     }
 
     /**
      *
-     * @param  {User} user
+     * @param {User} user
      */
-    setUer(user) {
+    setUser(user) {
         this.user = user;
     }
 
@@ -33,6 +31,6 @@ class News{
     getUser() {
         return this.user;
     }
-
 }
-module.exports = News;
+
+module.exports = Posts;

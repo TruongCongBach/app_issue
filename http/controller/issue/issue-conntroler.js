@@ -21,15 +21,12 @@ class IssueController {
             });
         }
 
-        showIssueInTopic(request, response, next) {
+        ShowIssueInStatus(request, response, next) {
             let searcher = request.app.get('issue.searcher');
-            searcher.searchCondition(request.condition).then((arrayIssueTopic)=>{
-                response.send(arrayIssueTopic);
+            searcher.searchCondition(request.condition).then((arrayIssueStatus)=>{
+                response.send(arrayIssueStatus);
             });
         }
-
-
-
 }
 
 module.exports = IssueController;

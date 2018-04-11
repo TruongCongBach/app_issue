@@ -9,6 +9,7 @@ let registration  = new Controller.registration();
 let feedback      = new Controller.feedbackContronler();
 let topic         = new Controller.TopicContronler();
 let comment       = new Controller.CommentContronler();
+let news          = new Controller.NewsController();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -23,7 +24,13 @@ router.get('/myIssue/:id', superCheck.SearchCondition, issue.showMyIssue);//ok
 router.get('/feedbackIssue/:id', feedback.showFeedback);//ok
 router.post('/comment',checkComment, comment.createComment);//ok
 router.get('/listTopic', topic.showTopic);//ok
-router.get('/listNewsIssueInTopic/:topicId', superCheck.SearchCondition, issue.showIssueInTopic);
-router.get('/listComment/:issue_id',comment.showCommentByIssue);//ok
+router.get('/listComment/:issue_id', comment.showCommentByIssue);//ok
+router.get('/listNewsIssueInTopic/:topicId', superCheck.SearchCondition, news.showIssueInTopic);
+
+//admin
+router.get('/listIssues', superCheck.SearchCondition, issue.ShowIssueInStatus);
+
+
+
 
 module.exports = router;

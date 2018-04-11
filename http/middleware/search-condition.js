@@ -1,5 +1,7 @@
 const SearchIssueUser = require('../../src/search-services/search-issue-user');
 const SearchIssueTopic = require('../../src/search-services/issue-topic');
+const SearchIssueStatus = require('../../src/search-services/status-issues');
+
 module.exports = function (req, res, next) {
     req.condition = makeCondition(req);
     next();
@@ -11,5 +13,8 @@ module.exports = function (req, res, next) {
         }
         if(req.path.toString().startsWith('/listNewsIssueInTopic/')){
             return new SearchIssueTopic(req.params.topicId);
+        }
+        if(req.path === '/listIssues'){
+            return new SearchIssueStatus();
         }
     }
