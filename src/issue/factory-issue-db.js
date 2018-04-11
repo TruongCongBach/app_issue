@@ -19,6 +19,7 @@ class FactoryIssueDB {
         myIssue.setDateTime(issue.date_time);
         myIssue.setStatus(issue.status);
         myIssue.setId(issue.id);
+        myIssue.setNews(issue.news);
         return myIssue;
 
     }

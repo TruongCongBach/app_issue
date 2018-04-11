@@ -25,10 +25,15 @@ router.get('/feedbackIssue/:id', feedback.showFeedback);//ok
 router.post('/comment',checkComment, comment.createComment);//ok
 router.get('/listTopic', topic.showTopic);//ok
 router.get('/listComment/:issue_id', comment.showCommentByIssue);//ok
-router.get('/listNewsIssueInTopic/:topicId', superCheck.SearchCondition, news.showIssueInTopic);
 
-//admin
+
+//admin show issue status = not process
 router.get('/listIssues', superCheck.SearchCondition, issue.ShowIssueInStatus);
+router.get('/createPosts/:issueId', news.createPosts);
+router.get('/deleteIssue/:issueId', news.deletePosts);
+
+//news
+router.get('/showIssueInNews/:topicId', superCheck.SearchCondition, news.showIssueInTopic);
 
 
 

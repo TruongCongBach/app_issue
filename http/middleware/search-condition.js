@@ -11,10 +11,10 @@ module.exports = function (req, res, next) {
         if(req.path.toString().startsWith('/myIssue/')){
             return new SearchIssueUser(req.params.id);
         }
-        if(req.path.toString().startsWith('/listNewsIssueInTopic/')){
+        if(req.path.toString().startsWith('/showIssueInNews/')){
             return new SearchIssueTopic(req.params.topicId);
         }
-        if(req.path === '/listIssues'){
+        if(req.path.toString().startsWith('/listIssues')){
             return new SearchIssueStatus();
         }
     }

@@ -14,6 +14,23 @@ class Issue {
 
     /**
      *
+     * @param {string} news
+     */
+    setNews(news) {
+        this.news = news;
+    }
+
+    /**
+     *
+     * @return {string} news
+     */
+    getNews() {
+        return this.news;
+    }
+
+
+    /**
+     *
      * @param {Topic} topic
      */
     setTopic(topic) {
