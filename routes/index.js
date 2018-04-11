@@ -29,8 +29,8 @@ router.get('/listComment/:issue_id', comment.showCommentByIssue);//ok
 
 //admin show issue status = not process
 router.get('/listIssues', superCheck.SearchCondition, issue.ShowIssueInStatus);
-router.get('/createPosts/:issueId', news.createPosts);
-router.get('/deleteIssue/:issueId', news.deletePosts);
+router.put('/createPosts/:issueId', news.createPosts);
+router.put('/deleteIssue/:issueId', news.deletePosts);
 
 //news
 router.get('/showIssueInNews/:topicId', superCheck.SearchCondition, news.showIssueInTopic);
