@@ -3,7 +3,7 @@ class StatusIssue {
     /**
      *
      * @param sqlQuery
-     * @return {*}
+     * @return {string}
      */
     describe(sqlQuery) {
         return sqlQuery

@@ -10,6 +10,11 @@ class ProviderComment {
         this.factory    = factory;
     }
 
+    /**
+     *
+     * @param issueId
+     * @return {*|PromiseLike<void>|Promise<void>}
+     */
     showCommentByIssue(issueId) {
         return this.connection('profiles')
             .innerJoin('comments', 'profiles.user_id', 'comments.user_id')

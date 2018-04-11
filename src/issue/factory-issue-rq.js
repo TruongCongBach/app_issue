@@ -10,7 +10,7 @@ let topicProvider   = new TopicProvider(Connection, new FactoryTopic());
 class MakeFormIssueReq {
 
     makeFormReq(req, res, next) {
-        let arrayTopic = topicProvider.providerId(req.body.topic_id);
+        let arrayTopic   = topicProvider.providerId(req.body.topic_id);
         let arrayProfile = profileProvider.providerId(req.body.user_id);
         Promise.all([arrayTopic, arrayProfile])
             .then((userTopic) => {

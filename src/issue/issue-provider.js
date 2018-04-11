@@ -1,4 +1,4 @@
-const Issue = require('./issue');
+const Issue      = require('./issue');
 const connection = require('../../database/connection');
 
 module.exports = function providerId(id) {

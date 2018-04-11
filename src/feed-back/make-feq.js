@@ -1,7 +1,5 @@
-const Issue = require('../issue/issue');
-const Feedback = require('../feed-back/feed-back');
-const User = require('../user/user');
-const ProviderUser = require('../user/user-provider');
+const Feedback      = require('../feed-back/feed-back');
+const ProviderUser  = require('../user/user-provider');
 const ProviderIssue = require('../issue/issue-provider');
 
 

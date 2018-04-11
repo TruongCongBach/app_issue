@@ -1,5 +1,5 @@
 const Issue = require('../issue/issue');
-const User = require('../user/user');
+const User  = require('../user/user');
 
 class FeedBack {
 
@@ -9,7 +9,7 @@ class FeedBack {
      * @param {string} content
      */
     constructor(issue, content) {
-        this.issue = issue;
+        this.issue   = issue;
         this.content = content;
     }
 

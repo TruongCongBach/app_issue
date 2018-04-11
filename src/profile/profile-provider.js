@@ -14,7 +14,7 @@ class UserProvider {
             user_id : id,
         }).then((arrayProfile) => {
             if(arrayProfile.length === 0) {
-                console.log('user khong ton tai');
+                return 'user does not exist';
             }
             let profile = new Profile();
             return profile.setProfile(arrayProfile);

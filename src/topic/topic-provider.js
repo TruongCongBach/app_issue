@@ -11,6 +11,11 @@ class UserProvider {
         this.factory = factory;
     }
 
+    /**
+     *
+     * @param id
+     * @return {Topic} topic
+     */
     providerId(id) {
         return this.connection.select().from('topics').where({
             id : id,
@@ -22,6 +27,10 @@ class UserProvider {
         })
     }
 
+    /**
+     *
+     * @return {Topic} topic[]
+     */
     providerAll() {
         return this.connection.select().from('topics').then((arrayTopic) => {
            return arrayTopic.map(element => this.factory.makeFromTopicDB(element))

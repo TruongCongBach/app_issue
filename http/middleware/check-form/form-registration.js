@@ -12,7 +12,7 @@ module.exports = function (req, res, next) {
                 req.registrationForm = registrationForm;
                 next();
             } else {
-                res.send('user dang ton tai hoac email');
+                res.send('user already exists');
             }
     });
 };
