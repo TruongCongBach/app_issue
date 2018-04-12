@@ -1,7 +1,7 @@
 const CommentRepo       = require('../comment/repo-comment');
 const FactoryComment    = require('../commentator/make-from-db');
 const ProviderComment   = require('../issue/search-services/provider-comment');
-module.exports = function (app) {
+module.exports = function (app, connection) {
     app.set('comment.repo', new CommentRepo(connection));
     app.set('listComment', new ProviderComment(connection, new FactoryComment()));
 };

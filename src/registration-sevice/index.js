@@ -4,7 +4,7 @@ const RegistrationForm  = require('../registration-sevice/registration-form/regi
 const Registration      = require('../registration-sevice/registration');
 const bcrypt            = require('bcrypt');
 
-module.exports = function (app) {
+module.exports = function (app, connection) {
     app.set('registration', new Registration(connection, bcrypt));
     app.set('registrationForm', new RegistrationForm(new Credential(), new Profile(), connection));
 };

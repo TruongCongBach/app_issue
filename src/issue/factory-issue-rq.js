@@ -1,6 +1,6 @@
 const Issue              = require('../issue/issue');
 const ProfileProvider    = require('../profile/profile-provider');
-const Connection         = require('../../database/connection');
+const Connection         = require('../../database');
 const TopicProvider      = require('../topic/topic-provider');
 const FactoryTopic       = require('../topic/factory-topic-db');
 

@@ -1,5 +1,5 @@
 const User = require('./user');
-const connection = require('../../database/connection');
+const connection = require('../../database');
 
 module.exports = function providerId(id) {
         return connection.select().from('users').where({

@@ -1,4 +1,3 @@
-module.exports = function (app) {
-    const connection = require('knex')(app.get('config').database);
+module.exports = function (app, connection) {
     app.set('databaseConnection', connection);
 };
