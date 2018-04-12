@@ -9,7 +9,7 @@ module.exports = {
         require('./src/issue'),
         require('./src/topic'),
         require('./src/comment'),
-        require('./src/news'),
+        require('./src/news')
     ],
 
     database : {

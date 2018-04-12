@@ -1,15 +1,14 @@
 const Issue              = require('../issue/issue');
 const ProfileProvider    = require('../profile/profile-provider');
-const Connection         = require('../../database');
 const TopicProvider      = require('../topic/topic-provider');
 const FactoryTopic       = require('../topic/factory-topic-db');
 
-let profileProvider = new ProfileProvider(Connection);
-let topicProvider   = new TopicProvider(Connection, new FactoryTopic());
 
 class MakeFormIssueReq {
 
     makeFormReq(req, res, next) {
+        let topicProvider   = new TopicProvider(req.app.get('databaseConnection'), new FactoryTopic());
+        let profileProvider = new ProfileProvider(req.app.get('databaseConnection'));
         let arrayTopic   = topicProvider.providerId(req.body.topic_id);
         let arrayProfile = profileProvider.providerId(req.body.user_id);
         Promise.all([arrayTopic, arrayProfile])
