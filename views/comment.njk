@@ -1,0 +1,41 @@
+{% extends 'layout.njk' %}
+
+{% block content %}
+<ul class="collection with-header">
+    <li  class="collection-item">
+            {{issue}}
+    </li>
+</ul>
+{% for comment in comments %}
+    <div class="col s5 m2 l6">
+        <div class="card-panel m2 grey lighten-5 z-depth-1">
+            <div class="row valign-wrapper">
+                <div class="col s2">
+                    <img  src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png" alt="" class="circle responsive-img"> <!-- notice the "circle" class -->
+                </div>
+                <div class="col s10">
+                  <h6>
+                    <span class="black-text">
+                        {{comment.profile.getFullName()}}
+                    </span>
+                  </h6>
+                <span class="black-text">
+                    {{comment.getComment()}}
+                  </span>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endfor %}
+<div class="row">
+    <div class="col s12">
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">textsms</i>
+                <input type="text" id="autocomplete-input" class="autocomplete">
+                <label for="autocomplete-input"></label>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
