@@ -138,41 +138,25 @@
                 </div>
                 <div class="collapsible-body"></div>
             </li>
-            <li>
-                <div class="collapsible-header brown-text">
-                    <i class="material-icons">near_me</i>
-                    Issue 18+
-                    <span class="new badge c62828 red darken-3">4</span></div>
-                <div class="collapsible-body"></div>
-            </li>
-            <li>
-                <div class="collapsible-header brown-text">
-                    <i class="material-icons">near_me</i>
-                    Issue 18+
-                    <span class="new badge c62828 red darken-3">4</span></div>
-                <div class="collapsible-body brown-text"></div>
-            </li>
-            <li>
-                <div class="collapsible-header brown-text">
-                    <i class="material-icons">near_me</i>
-                    Issue 18+
-                    <span class="new badge c62828 red darken-3">4</span></div>
-                <div class="collapsible-body"></div>
-            </li>
-            <li>
-                <div class="collapsible-header brown-text">
-                    <i class="material-icons">near_me</i>
-                    Issue 18+
-                    <span class="new badge c62828 red darken-3">4</span></div>
-                <div class="collapsible-body"></div>
-            </li>
-            <li>
-                <div class="collapsible-header brown-text">
-                    <i class="material-icons">near_me</i>
-                    Issue 18+
-                    <span class="new badge c62828 red darken-3">4</span></div>
-                <div class="collapsible-body"></div>
-            </li>
+            <div id="list-topic">
+                <script id="list-topic-template" type="text/html">
+                    <ul>
+                        <li>
+                            <div class="collapsible-header brown-text">
+                                <i class="material-icons">near_me</i>
+                                <a id="a" data-topic-id=":topicId:" >:topicName:</a>
+                                <span class="new badge c62828 red darken-3">4</span>
+                            <div class="collapsible-body"></div>
+                            </div>
+                        </li>
+                    </ul>
+                </script>
+                <script id="list-issue-template"  type="text/html">
+                    <ul>
+                        <li>:Issue:</li>
+                    </ul>
+                </script>
+            </div>
             <li>
                 <div class="collapsible-header red-text">
                     <i class="material-icons">place</i>
@@ -190,4 +174,8 @@
         });
     </script>
 </body>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="/javascripts/home.js"></script>
+
+
 </html>

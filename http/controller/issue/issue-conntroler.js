@@ -27,6 +27,13 @@ class IssueController {
                 response.send(arrayIssueStatus);
             });
         }
+        
+        showIssueNews(request, response, next) {
+            let searcher = request.app.get('issue.searcher');
+            searcher.searchCondition(request.condition).then((arrayIssueStatus)=>{
+                response.send(arrayIssueStatus);
+            });
+        }
 }
 
 module.exports = IssueController;
