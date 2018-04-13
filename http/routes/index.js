@@ -13,7 +13,7 @@ let news          = new Controller.NewsController();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index.html', { title: 'Express' });
+  res.render('index.njk', { title: 'Express' });
 });
 
 //member
