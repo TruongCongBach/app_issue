@@ -2,44 +2,95 @@
 	<head>
 		<title>{{title}}</title>
 		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 	</head>
 	<body>
-		<div id="list-topic">noi dung list</div>
-		<h1>News Issue</h1>
-		<div id="table-news"></div>
+
+	<div class="container ">
+		<div class="col-sm-12">
+					<h1>
+						<i class="glyphicon glyphicon-sunglasses"></i>
+						App Issue
+					</h1>
+				<hr>
+			<div class="row">
+				<div class="col-sm-3">
+					<div><h1>List Topic</h1></div>
+					<div id="list-topic">noi dung list</div>
+				</div>
+				<div class="col-sm-1">
+
+				</div>
+				<div class="col-sm-8">
+					<h1>News Issue</h1>
+					<div id="table-news">
+						noi dung cua bang tin
+					</div>
+
+
+
+				</div>
+			</div>
 
 
 
 
+		</div>
 
 
-
-
-
-
-
-
-
-
+	</div>
 	</body>
+
+
 	<script type="text/javascript" src="/javascripts/home.js"></script>
+
 	<script id="list-topic-template" type="text/html">
-		<ul>
-			<li><a id="a" data-topic-id=":topicId:" >:topicName:</a></li>
-		</ul>
-	</script>
-	<script id="list-issue-template"  type="text/html">
-		<ul>
-			<li>:Issue:</li>
-		</ul>
-	</script>
-	<script id="table-new-template" type="text/html">
-		<ul>
-			<li>:issue:</li>
+		<ul class="list-group">
+			<li class=" list-group-item list-group-item-action list-group-item-success">
+				<a id="a" data-topic-id=":topicId:" >
+					<i class="glyphicon glyphicon-apple"></i>
+					:topicName:
+				</a>
+			</li>
 		</ul>
 	</script>
 
+	<script id="list-issue-template"  type="text/html">
+		<ul class="list-group">
+			<li  class="list-group-item">
+				<a  id="issue-comment" href="/listComment/:issue-id:">
+					:Issue:
+				</a>
+			</li>
+			<li class=" list-group-item">
+				<p id="comment">
+					space
+				</p>
+			</li>
+		</ul>
+	</script>
+
+
+
+	<script id="comment-template" type="text/html">
+		<div class="col-sm-1">
+			<div class="thumbnail">
+				<img class="img-responsive user-photo" src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png">
+			</div>
+		</div>
+
+		<div class="col-sm-5">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<strong>:full-name:</strong> <span class="text-muted">:date:</span>
+				</div>
+				<div class="panel-body">
+					:comment:
+				</div>
+			</div>
+		</div>
+	</script>
 </html>
