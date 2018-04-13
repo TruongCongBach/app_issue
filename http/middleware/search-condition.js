@@ -2,6 +2,7 @@ const SearchIssueUser = require('../../src/issue/search-services/search-issue-us
 const SearchIssueTopic = require('../../src/issue/search-services/issue-topic');
 const SearchIssueStatus = require('../../src/issue/search-services/status-issues');
 const SearchIssueNew = require('../../src/issue/search-services/issue-news');
+const SearchIssueId = require('../../src/issue/search-services/issue-id');
 module.exports = function (req, res, next) {
     req.condition = makeCondition(req);
     next();
@@ -19,6 +20,9 @@ module.exports = function (req, res, next) {
         }
         if(req.path.toString().startsWith('/showIssueNews')){
             return new SearchIssueNew();
+        }
+        if(req.path.toString().startsWith('/listComment/')){
+            return new SearchIssueId(req.params.issue_id);
         }
 
     }

@@ -2,11 +2,13 @@ class CommentController {
 
 
     showCommentByIssue(req, res, next) {
-        req.app.get('listComment')
-            .showCommentByIssue(req.params.issue_id)
-            .then((listComment)=>{
-                res.send(listComment);
-            })
+        let searcher = req.app.get('issue.searcher')
+            .searchCondition(req.condition);
+        let comment = req.app.get('listComment')
+            .showCommentByIssue(req.params.issue_id);
+        Promise.all([searcher, comment]).then((arrayIssueComment)=>{
+            res.json(arrayIssueComment);
+        })
     }
 
     createComment(req, res, next) {

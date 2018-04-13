@@ -27,7 +27,7 @@ router.get('/myIssue/:id', superCheck.SearchCondition, issue.showMyIssue);//ok
 router.post('/sendIssue', superCheck.fromSendIssue, issue.createIssue);//ok
 router.get('/feedbackIssue/:id', feedback.showFeedback);//ok
 router.post('/comment',checkComment, comment.createComment);//ok
-router.get('/listComment/:issue_id', comment.showCommentByIssue);//ok
+router.get('/listComment/:issue_id', superCheck.SearchCondition, comment.showCommentByIssue);//ok
 
 
 //admin show issue status = not process
