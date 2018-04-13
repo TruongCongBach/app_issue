@@ -3,7 +3,7 @@ class NewsController {
     showIssueInTopic(request, response) {
         let searcher = request.app.get('issue.searcher');
         searcher.searchCondition(request.condition).then((arrayIssueTopic)=>{
-            response.send(arrayIssueTopic);
+            response.json(arrayIssueTopic);
         });
     }
 

@@ -1,6 +1,4 @@
 const Topic = require('../topic/topic');
-const User  = require('../user/user');
-const Rate  = require('../rate');
 
 class Issue {
 
