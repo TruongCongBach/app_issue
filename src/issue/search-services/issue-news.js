@@ -7,10 +7,8 @@ class NewsIssue {
      */
     describe(sqlQuery) {
         return sqlQuery
-            .where(function () {
-                this.where('status', 'like', '%processed%')
-            }).where({'issues.archived_at': null})
-              .whereNotNull('issues.news');
+            .where({'issues.archived_at': null})
+            .whereNotNull('issues.news');
     }
 }
 

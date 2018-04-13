@@ -1,11 +1,17 @@
 {% extends 'layout.njk' %}
 
 {% block content %}
-<script id="table-new-template" type="text/html">
+
+<script type="text/javascript" src="/javascripts/home.js"></script>
+<p class="collection-header"><h4>News</h4></p>
+<div id="table-news"></div>
+<script id="list-issue-template"  type="text/html">
 	<ul class="collection with-header">
-		<li class="collection-header"><h4>First Names</h4></li>
-		<li class="collection-item">:issue:</li>
+		<li  class="collection-item">
+			<a  id="issue-comment" href="/listComment/:issue-id:">
+				:Issue:<i class="material-icons prefix blue-text right">comment</i>
+			</a>
+		</li>
 	</ul>
 </script>
-
 {% endblock %}
