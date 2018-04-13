@@ -22,26 +22,98 @@
                 </ul>
             </div>
         </nav>
-    </div>
-    <section class="col m9 right">
-        <div id="modal1" class="modal">
-            <div class="modal-content">
-                <h5 class="blue-text">Login</h5>
+        <section class="col m9 right">
+            <!--show login-->
+            <div id="modal1" class="modal">
+                <div class="modal-content">
+                    <h5 class="blue-text">Login</h5>
+                </div>
+                <div class="center">
+                    <div class="input-field inline row">
+                        <i class="material-icons prefix blue-text">account_circle</i>
+                        <input id="icon_prefix" type="text" class="validate">
+                        <label for="icon_prefix">Account</label>
+                    </div>
+                    <br>
+                    <div class="input-field inline">
+                        <i class="material-icons prefix blue-text">lock_open</i>
+                        <input id="password" type="password" class="validate">
+                        <label for="password">Password</label>
+                    </div>
+                    <div>
+                        <button class="btn waves-effect 2196f3 blue" type="submit" name="action">Login
+                            <i class="material-icons right">send</i>
+                        </button>
+                        <br>
+                    </div>
+                    <p></p>
+                    <p></p>
+                </div>
             </div>
-            <div class="center">
-                <div class="input-field inline row">
-                    <i class="material-icons prefix blue-text">account_circle</i>
-                    <input id="icon_prefix" type="text" class="validate">
-                    <label for="icon_prefix">Account</label>
+            <!--show sign up-->
+            <div id="modal2" class="modal">
+                <div class="modal-content">
+                    <h5 class="blue-text">Sign Up</h5>
                 </div>
-                <br>
-                <div class="input-field inline">
-                    <i class="material-icons prefix blue-text">lock_open</i>
-                    <input id="password" type="password" class="validate">
-                    <label for="password">Password</label>
+                <div class="center">
+                    <form action="#">
+                        <div class="file-field input-field">
+                            <div class="btn 2196f3 blue">
+                                <span>File</span>
+                                <input type="file" multiple>
+                            </div>
+                            <div class="file-path-wrapper">
+                                <input class="file-path validate " type="text" placeholder="Upload avatar">
+                            </div>
+                        </div>
+                    </form>
+                    <div class="input-field col s11">
+                        <i class="material-icons prefix">account_circle</i>
+                        <textarea id="account" class="materialize-textarea"></textarea>
+                        <label for="account">Account</label>
+                    </div>
+                    <div class="input-field col s11">
+                        <i class="material-icons prefix">create</i>
+                        <textarea id="full-name" class="materialize-textarea"></textarea>
+                        <label for="full-name">Full Name</label>
+                    </div>
+                    <div class="center">
+                        <label>
+                            <input type="checkbox" />
+                            <span>Lady</span>
+                            &nbsp;&nbsp;
+                            <input type="checkbox" />
+                            <span>Gentlemen</span>
+                        </label>
+                    </div>
+                    <div class="input-field col s11">
+                        <i class="material-icons prefix">lock_open</i>
+                        <input id="password-create" type="password" class="validate">
+                        <label for="password-create">Password</label>
+                    </div>
+                    <div class="input-field col s11">
+                        <i class="material-icons prefix">cake</i>
+                        <input type="date" id="birth">
+                        <label for="birth">Birth Day</label>
+                    </div>
+                    <div class="input-field col s11">
+                        <i class="material-icons prefix">home</i>
+                        <textarea id="address" class="materialize-textarea"></textarea>
+                        <label for="address">Address</label>
+                    </div>
+                    <div class="input-field col s11">
+                        <i class="material-icons prefix">email</i>
+                        <textarea id="email" class="materialize-textarea"></textarea>
+                        <label for="email">Email</label>
+                    </div>
+                    <div class="input-field col s11">
+                        <i class="material-icons prefix">phone</i>
+                        <textarea id="phone" class="materialize-textarea"></textarea>
+                        <label for="phone">Phone</label>
+                    </div>
                 </div>
-                <div>
-                    <button class="btn waves-effect 2196f3 blue" type="submit" name="action">Login
+                <div class="center">
+                    <button class="btn waves-effect 2196f3 blue" type="submit" name="action">Submit
                         <i class="material-icons right">send</i>
                     </button>
                     <br>
@@ -49,89 +121,17 @@
                 <p></p>
                 <p></p>
             </div>
-        </div>
-        <!--show sign up-->
-        <div id="modal2" class="modal">
-            <div class="modal-content">
-                <h5 class="blue-text">Sign Up</h5>
-            </div>
-            <div class="center">
-                <form action="#">
-                    <div class="file-field input-field">
-                        <div class="btn 2196f3 blue">
-                            <span>File</span>
-                            <input type="file" multiple>
-                        </div>
-                        <div class="file-path-wrapper">
-                            <input class="file-path validate " type="text" placeholder="Upload avatar">
-                        </div>
-                    </div>
-                </form>
-                <div class="input-field col s11">
-                    <i class="material-icons prefix">account_circle</i>
-                    <textarea id="account" class="materialize-textarea"></textarea>
-                    <label for="account">Account</label>
-                </div>
-                <div class="input-field col s11">
-                    <i class="material-icons prefix">create</i>
-                    <textarea id="full-name" class="materialize-textarea"></textarea>
-                    <label for="full-name">Full Name</label>
-                </div>
-                <div class="center">
-                    <label>
-                        <input type="checkbox" />
-                        <span>Lady</span>
-                        &nbsp;&nbsp;
-                        <input type="checkbox" />
-                        <span>Gentlemen</span>
-                    </label>
-                </div>
-                <div class="input-field col s11">
-                    <i class="material-icons prefix">lock_open</i>
-                    <input id="password-create" type="password" class="validate">
-                    <label for="password-create">Password</label>
-                </div>
-                <div class="input-field col s11">
-                    <i class="material-icons prefix">cake</i>
-                    <input type="date" id="birth">
-                    <label for="birth">Birth Day</label>
-                </div>
-                <div class="input-field col s11">
-                    <i class="material-icons prefix">home</i>
-                    <textarea id="address" class="materialize-textarea"></textarea>
-                    <label for="address">Address</label>
-                </div>
-                <div class="input-field col s11">
-                    <i class="material-icons prefix">email</i>
-                    <textarea id="email" class="materialize-textarea"></textarea>
-                    <label for="email">Email</label>
-                </div>
-                <div class="input-field col s11">
-                    <i class="material-icons prefix">phone</i>
-                    <textarea id="phone" class="materialize-textarea"></textarea>
-                    <label for="phone">Phone</label>
-                </div>
-            </div>
-            <div class="center">
-                <button class="btn waves-effect 2196f3 blue" type="submit" name="action">Submit
-                    <i class="material-icons right">send</i>
-                </button>
-                <br>
-            </div>
-            <p></p>
-            <p></p>
-        </div>
-        <div class="main">
+            <!--****-->
+
             {% block content %}
 
             {% endblock%}
-        </div>
-    </section>
+        </section>
 
     <aside class="col s12 m4 l2">
         <ul id="nav-mobile" class="sidenav sidenav-fixed collapsible">
             <div class="center" >
-                <img src="./../public/img/logo.png" alt="Girl in a jacket" style="width:50%">
+                <a href="http://localhost:3000"><img src="/img/logo.png" alt="Girl in a jacket" style="width:50%"></a>
             </div>
             <li>
                 <div class="collapsible-header f1f8e9 light-green lighten-5">
@@ -140,41 +140,25 @@
                 </div>
                 <div class="collapsible-body"></div>
             </li>
-            <li>
-                <div class="collapsible-header brown-text">
-                    <i class="material-icons">near_me</i>
-                    Issue 18+
-                    <span class="new badge c62828 red darken-3">4</span></div>
-                <div class="collapsible-body"></div>
-            </li>
-            <li>
-                <div class="collapsible-header brown-text">
-                    <i class="material-icons">near_me</i>
-                    Issue 18+
-                    <span class="new badge c62828 red darken-3">4</span></div>
-                <div class="collapsible-body brown-text"></div>
-            </li>
-            <li>
-                <div class="collapsible-header brown-text">
-                    <i class="material-icons">near_me</i>
-                    Issue 18+
-                    <span class="new badge c62828 red darken-3">4</span></div>
-                <div class="collapsible-body"></div>
-            </li>
-            <li>
-                <div class="collapsible-header brown-text">
-                    <i class="material-icons">near_me</i>
-                    Issue 18+
-                    <span class="new badge c62828 red darken-3">4</span></div>
-                <div class="collapsible-body"></div>
-            </li>
-            <li>
-                <div class="collapsible-header brown-text">
-                    <i class="material-icons">near_me</i>
-                    Issue 18+
-                    <span class="new badge c62828 red darken-3">4</span></div>
-                <div class="collapsible-body"></div>
-            </li>
+            <div id="list-topic">
+                <script id="list-topic-template" type="text/html">
+                    <ul>
+                        <li>
+                            <div class="collapsible-header brown-text">
+                                <i class="material-icons">near_me</i>
+                                <a id="a" data-topic-id=":topicId:" >:topicName:</a>
+                                <span class="new badge c62828 red darken-3">4</span>
+                            <div class="collapsible-body"></div>
+                            </div>
+                        </li>
+                    </ul>
+                </script>
+                <script id="list-issue-template"  type="text/html">
+                    <ul>
+                        <li>:Issue:</li>
+                    </ul>
+                </script>
+            </div>
             <li>
                 <div class="collapsible-header red-text">
                     <i class="material-icons">place</i>
@@ -192,4 +176,8 @@
         });
     </script>
 </body>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="/javascripts/home.js"></script>
+
+
 </html>

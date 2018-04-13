@@ -2,107 +2,16 @@
 
 {% block content %}
 
-	<section class="col m9 right">
-		<div class="main">
-			<p class="flow-text">Top</p>
-			<ul class="collection">
-				<li class="collection-item avatar">
-					<i class="material-icons circle">folder</i>
-					<span class="title">Title</span>
-					<p>First Line <br>
-					</p>
-					<a href="" class="secondary-content ">
-						<i class="material-icons">grade</i>&nbsp;&nbsp;&nbsp;
-						<i class="material-icons">forum</i>
-					</a>
-				</li>
-				<li class="collection-item avatar">
-					<i class="material-icons circle green">insert_chart</i>
-					<span class="title">Title</span>
-					<p>First Line <br>
-					</p>
-					<a href="" class="secondary-content">
-						<i class="material-icons">grade</i>&nbsp;&nbsp;&nbsp;
-						<i class="material-icons">forum</i>
-					</a>
-				</li>
-				<li class="collection-item avatar">
-					<i class="material-icons circle red">play_arrow</i>
-					<span class="title">Title</span>
-					<p>First Line <br>
-					</p>
-					<a href="" class="secondary-content">
-						<i class="material-icons">grade</i>&nbsp;&nbsp;&nbsp;
-						<i class="material-icons">forum</i>
-					</a>
-				</li>
-			</ul>
-			<p class="flow-text">Top</p>
-			<ul class="collection">
-				<li class="collection-item avatar">
-					<i class="material-icons circle">folder</i>
-					<span class="title">Title</span>
-					<p>First Line <br>
-					</p>
-					<a href="" class="secondary-content">
-						<i class="material-icons">grade</i>&nbsp;&nbsp;&nbsp;
-						<i class="material-icons">forum</i>
-					</a>
-				</li>
-				<li class="collection-item avatar">
-					<i class="material-icons circle green">insert_chart</i>
-					<span class="title">Title</span>
-					<p>First Line <br>
-					</p>
-					<a href="" class="secondary-content">
-						<i class="material-icons">grade</i>&nbsp;&nbsp;&nbsp;
-						<i class="material-icons">forum</i>
-					</a>
-				</li>
-				<li class="collection-item avatar">
-					<i class="material-icons circle red">play_arrow</i>
-					<span class="title">Title</span>
-					<p>First Line <br>
-					</p>
-					<a href="" class="secondary-content">
-						<i class="material-icons">grade</i>&nbsp;&nbsp;&nbsp;
-						<i class="material-icons">forum</i>
-					</a>
-				</li>
-			</ul>
-			<p class="flow-text">Top</p>
-			<ul class="collection">
-				<li class="collection-item avatar">
-					<i class="material-icons circle">folder</i>
-					<span class="title">Title</span>
-					<p>First Line <br>
-					</p>
-					<a href="" class="secondary-content">
-						<i class="material-icons">grade</i>&nbsp;&nbsp;&nbsp;
-						<i class="material-icons">forum</i>
-					</a>
-				</li>
-				<li class="collection-item avatar">
-					<i class="material-icons circle green">insert_chart</i>
-					<span class="title">Title</span>
-					<p>First Line <br>
-					</p>
-					<a href="" class="secondary-content">
-						<i class="material-icons">grade</i>&nbsp;&nbsp;&nbsp;
-						<i class="material-icons">forum</i>
-					</a>
-				</li>
-				<li class="collection-item avatar">
-					<i class="material-icons circle red">play_arrow</i>
-					<span class="title">Title</span>
-					<p>First Line <br>
-					</p>
-					<a href="" class="secondary-content">
-						<i class="material-icons">grade</i>&nbsp;&nbsp;&nbsp;
-						<i class="material-icons">forum</i>
-					</a>
-				</li>
-			</ul>
-		</div>
-	</section>
+<script type="text/javascript" src="/javascripts/home.js"></script>
+<p class="collection-header"><h4>News</h4></p>
+<div id="table-news"></div>
+<script id="list-issue-template"  type="text/html">
+	<ul class="collection with-header">
+		<li  class="collection-item">
+			<a  id="issue-comment" href="/listComment/:issue-id:">
+				:Issue:<i class="material-icons prefix blue-text right">comment</i>
+			</a>
+		</li>
+	</ul>
+</script>
 {% endblock %}
