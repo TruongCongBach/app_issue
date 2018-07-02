@@ -7,7 +7,6 @@ class CommentController {
         let comment = req.app.get('listComment')
             .showCommentByIssue(req.params.issue_id);
         Promise.all([searcher, comment]).then((arrayIssueComment)=>{
-            console.log(arrayIssueComment[1][0].profile.getFullName());
             res.render('comment.njk', {
                issue : arrayIssueComment[0][0].getContent(),
                 comments: arrayIssueComment[1],
